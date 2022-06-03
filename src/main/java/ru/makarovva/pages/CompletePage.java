@@ -1,5 +1,6 @@
 package ru.makarovva.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,12 +24,12 @@ public class CompletePage extends BasePage {
         super(driver);
         initElements(this.driver, this);
     }
-
+    @Step ("Проверка соответствия URL")
     public CompletePage checkCompletePageUrl() {
         assertThat(driver.getCurrentUrl(), equalTo("https://www.saucedemo.com/checkout-complete.html"));
         return this;
     }
-
+    @Step("Проверка наличия картинки")
     public CompletePage checkImageOnThePage() {
         assertThat(driver.findElements(By.className("pony_express")).size(), not(equalTo(0)));
     return this;

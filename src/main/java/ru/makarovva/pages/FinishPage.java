@@ -1,5 +1,6 @@
 package ru.makarovva.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +20,7 @@ public class FinishPage extends BasePage {
         initElements(this.driver, this);
     }
 
-
+    @Step("Нажать кнопку Finish")
     public CompletePage clickFinishButton() {
         finishButton.click();
         return new CompletePage(driver);

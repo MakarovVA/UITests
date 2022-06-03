@@ -1,5 +1,8 @@
 package ru.makarovva.tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,12 +20,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HappyPathTests extends BaseTest {
 
-
+    @Story("Happy Path тест")
+    @Feature("Проверка полного пути покупки товара")
+    @Description("Happy Path тест")
     @Test
     void authorisationPositiveTest() throws InterruptedException {
 
         new LoginPage(driver)
-                .enterLogin(username)
+                .enterLogin(username1)
                 .enterPassword(password)
                 .clickLoginButton()
                 .addToCart()

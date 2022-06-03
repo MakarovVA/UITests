@@ -1,5 +1,6 @@
 package ru.makarovva.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -82,30 +83,30 @@ public class CheckoutPage extends BasePage {
         super(driver);
         initElements(this.driver, this);
     }
-
+    @Step("Ввод имени")
     public CheckoutPage enterFirstName(String firstName) {
         firstNameInput.click();
         firstNameInput.sendKeys(firstName);
         return this;
     }
-
+    @Step("Ввод фамилии")
     public CheckoutPage enterLastName(String lastName) {
         lastNameInput.click();
         lastNameInput.sendKeys(lastName);
         return this;
     }
-
+    @Step("Ввод почтового индекса")
     public CheckoutPage enterPostalCode(String postalCode) {
         postalCodeInput.click();
         postalCodeInput.sendKeys(postalCode);
         return this;
     }
-
+    @Step("Нажатие кнопки Continue")
     public FinishPage clickContinueButton() {
         continueButton.click();
         return new FinishPage(driver);
     }
-
+    @Step ("Проврка наличия всех элементов страницы")
     public CheckoutPage checkAllElementsExistence() {
         assertThat(driver.getCurrentUrl(), equalTo("https://www.saucedemo.com/checkout-step-one.html"));
         assertThat(driver.findElements(By.className("app_logo")).size(), not(equalTo(0)));

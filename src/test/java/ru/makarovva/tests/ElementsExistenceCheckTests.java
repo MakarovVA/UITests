@@ -1,5 +1,7 @@
 package ru.makarovva.tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Story;
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,12 +20,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ElementsExistenceCheckTests extends BaseTest {
 
 
-
+    @Story("Проверка наличия всех элементов на странице Checkout")
+    @Description("Проверка наличия всех элементов на странице Checkout")
     @Test
     void checkoutPageElementsCheckTest() throws InterruptedException {
 
         new LoginPage(driver)
-                .enterLogin(username)
+                .enterLogin(username1)
                 .enterPassword(password)
                 .clickLoginButton()
                 .addToCart()
