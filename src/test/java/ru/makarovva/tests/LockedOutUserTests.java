@@ -17,6 +17,7 @@ public class LockedOutUserTests extends BaseTest {
                 .enterLogin(username2)
                 .enterPassword(password)
                 .clickLoginButton()
+                .checkInventoryPageUrl()
                 .addToCart()
                 .clickShoppingCartButton()
                 .clickCheckoutButton()

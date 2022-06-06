@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public class LoginPage extends BasePage {
 
     @FindBy(css = "[data-test='username']")
@@ -35,4 +38,5 @@ public class LoginPage extends BasePage {
         loginButton.click();
         return new InventoryPage(driver);
     }
+
 }

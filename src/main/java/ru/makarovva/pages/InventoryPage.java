@@ -119,5 +119,10 @@ public class InventoryPage extends BasePage {
 
 
     }
+    @Step ("Проверка URL")
+    public InventoryPage checkInventoryPageUrl() {
+        assertThat(driver.getCurrentUrl(), equalTo("https://www.saucedemo.com/inventory.html"));
+        return this;
+    }
 }
 

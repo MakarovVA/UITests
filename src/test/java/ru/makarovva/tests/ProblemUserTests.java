@@ -25,6 +25,7 @@ public class ProblemUserTests extends BaseTest {
                 .enterLastName(lastName)
                 .enterPostalCode(postalCode)
                 .clickContinueButton()
+                .checkCheckoutStepTwoUrl()
                 .clickFinishButton()
                 .checkCompletePageUrl()
                 .checkImageOnThePage();
