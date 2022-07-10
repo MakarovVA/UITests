@@ -2,3 +2,4 @@
 *.iml
 target
 .allure
+.allure/allure-2.14.0
